@@ -76,15 +76,13 @@ public class ShopTest {
     }
 
     /**
-     * It test the getYear method.
+     * It test the constructor method.
      * It fails if the year we get from the Computer is older than the first computer was invented.
      */
-    @Test(expected=Exception.class)
-    public void testGetYearTooOld() {
-        ResaleShop shop=new ResaleShop();
+    @Test
+    public void testTooOld() {
         Computer computer=new Computer("2019 MacBook Air", "Intel", 256, 512, "High Sierra", 1900, 1000);
-        shop.inventory.add(computer);
-        computer.getYear();
+        assertTrue(computer.yearMade>1945); 
     }
 
     /**
@@ -264,7 +262,7 @@ public class ShopTest {
         runTests.testSetPriceException();
         runTests.testSetOS();
         runTests.testGetYear();
-        runTests.testGetYearTooOld();
+        runTests.testTooOld();
         runTests.testToString();
         runTests.testBuyComputer();
         runTests.testBuySameObject();

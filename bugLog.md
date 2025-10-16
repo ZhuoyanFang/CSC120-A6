@@ -31,8 +31,8 @@ Brief description: The printInventory method cannot print the inventory since th
 Failed unit test: testPrintInventory()
 
 ## Bug 9
-Brief description:  The getYear method in Computer cannot throw exception when the year of the computer is strange.
-Failed unit test: testGetYearTooOld() 
+Brief description:  The constructor of Computer record a computer that has a too old year made, which is very strange.
+Failed unit test: testTooOld() 
 
 ## Bug 10
 Brief description:  The refurbish method cannot correctly refurbish the price of the computer which is made between 2000 and 2012.
