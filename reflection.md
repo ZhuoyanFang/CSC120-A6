@@ -1,4 +1,9 @@
 Use this file to record your reflection on this assignment.
 
 What are your initial impressions of how `Unit Testing` affects your programming?
+Before this assignment, I did not think that I need to test with those skills but just run my code in the main() function. If the main() works, then my codes are correct, After I learnt about unit testing, I realized that testing can also discover some hidden problems that we cannot find by only running the main() functions. When the circumstances changes, it might still goes wrong. Many of the bugs in the provided ResaleShop and Computer were not obvious at my first glance. With unit testing, I can find them very quickly.
+In the unit tesing, I implemented assertTrue(), assertFalse() and assertEquals() in my code, and I found that there is something wrong with the buy method since assertTrue(shop.inventory.contains(computer)) failed.
+The printInventory() test showed that there is IndexOutOfBoundsException. When testing for Computer, I found the wrong in setOS() and constructor.
+
 What worked, what didn't, what advice would you give someone taking this course in the future?
+My unit testing works in the ShopTest now, and it shows the problems in the code of ResaleShop and Computer. At first, I tried to do multiple checks in a single section, but then I found that if one is confirmed wrong, I cannt use it again in my other test. After solving thoes problems, I tests went much more smooth. I want to teel others that do not put the functions that we want to test in the same place, we cannot test them together and they will just influence each other.
