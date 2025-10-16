@@ -251,30 +251,6 @@ public class ShopTest {
         assertEquals(1000, computer.price); 
     }
 
-    /**
-     * It runs all the unit tests.
-     */
-    public static void main(String[] args) throws Exception{
-        ShopTest runTests=new ShopTest();
-        runTests.testPrice();
-        runTests.testMemory();
-        runTests.testSetPrice();
-        runTests.testSetPriceException();
-        runTests.testSetOS();
-        runTests.testGetYear();
-        runTests.testTooOld();
-        runTests.testToString();
-        runTests.testBuyComputer();
-        runTests.testBuySameObject();
-        runTests.testSellComputer();
-        runTests.testSellNonexistentObject();
-        runTests.testPrintInventory();
-        runTests.testRefurbishOS();
-        runTests.testRefurbishNotUpdateOS();
-        runTests.testRefurbish2000();
-        runTests.testRefurbish2012();
-        runTests.testRefurbish2018();
-        runTests.testRefurbishOtherYear();
-    }
+    
     
 }
