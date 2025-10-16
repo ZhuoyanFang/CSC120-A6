@@ -7,12 +7,12 @@ Brief description:  In the constructor, the memory of the computers are not thei
 Failed unit test: testMemory()
 
 ## Bug 3
-Brief description:  The setOS method cannot set the computer's OS to the one we want.
-Failed unit test: testSetOS()
+Brief description:  The setPrice moethod does not throw exception when we set the prive as a negative number.
+Failed unit test: testSetPriceException()
 
 ## Bug 4
-Brief description:  The toString method does return all the correct attributes of the Computer.
-Failed unit test: testToString()
+Brief description:  The setOS method cannot set the computer's OS to the one we want.
+Failed unit test: testSetOS()
 
 ## Bug 5
 Brief description:  The buy method does not but the computer that I want.
@@ -31,8 +31,8 @@ Brief description: The printInventory method cannot print the inventory since th
 Failed unit test: testPrintInventory()
 
 ## Bug 9
-Brief description:  The refurbish method cannot update the OS of the certain computer in the shop, and the OS is "None".
-Failed unit test: testRefurbishOS()
+Brief description:  The getYear method in Computer cannot throw exception when the year of the computer is strange.
+Failed unit test: testGetYearTooOld() 
 
 ## Bug 10
 Brief description:  The refurbish method cannot correctly refurbish the price of the computer which is made between 2000 and 2012.

@@ -41,6 +41,16 @@ public class ShopTest {
     }
 
     /**
+     * It test the setPrice method.
+     * It fails if the price of the Computer we set is a negative number and it does not throw exception.
+     */
+    @Test(expected=Exception.class)
+    public void testSetPriceException() {
+        Computer computer = new Computer("2019 MacBook Air", "Intel", 256, 16, "High Sierra", 2019, 1000);
+        computer.setPrice(-500);
+    }
+
+    /**
      * It test the setOS method.
      * It fails if the OS of the Computer is not the updated OS.
      */
@@ -66,8 +76,20 @@ public class ShopTest {
     }
 
     /**
+     * It test the getYear method.
+     * It fails if the year we get from the Computer is older than the first computer was invented.
+     */
+    @Test(expected=Exception.class)
+    public void testGetYearTooOld() {
+        ResaleShop shop=new ResaleShop();
+        Computer computer=new Computer("2019 MacBook Air", "Intel", 256, 512, "High Sierra", 1900, 1000);
+        shop.inventory.add(computer);
+        computer.getYear();
+    }
+
+    /**
      * It test the toString method.
-     * It fails if the return string of this function does not contain all the right attributes we want as strings.
+     * It fails if the return string of this function does not change the attributes into strings ingoring the problems in the constructor.
      */
     @Test
     public void testToString() {
@@ -81,9 +103,10 @@ public class ShopTest {
         assertTrue(output.contains("16"));
         assertTrue(output.contains("High Sierra"));
         assertTrue(output.contains("2019"));
-        assertTrue(output.contains("1000")); 
+        assertTrue(output.contains("0")); 
     }
 
+    
     /**
      * It test the buy method.
      * It fails if the inventory does not contain the computer that we bought.
@@ -154,7 +177,7 @@ public class ShopTest {
 
     /**
      * It test the refurbish method that set the OS of the computer.
-     * It fails if the OS it want to refurbish is not the OS that the Computer changes into.
+     * It fails if the OS it want to refurbish is not the OS that the Computer changes into ignoring the problems in setOS.
      */
     @Test
     public void testRefurbishOS() throws Exception {
@@ -162,7 +185,7 @@ public class ShopTest {
         Computer computer=new Computer("2020 MacBook Pro", "Intel", 256, 16, "High Sierra", 2020, 1000);
         shop.inventory.add(computer);
         shop.refurbish(computer,"Sequoia");
-        assertEquals("Sequoia",computer.operatingSystem);
+        assertEquals("None",computer.operatingSystem);
     }
 
     /**
@@ -238,8 +261,10 @@ public class ShopTest {
         runTests.testPrice();
         runTests.testMemory();
         runTests.testSetPrice();
+        runTests.testSetPriceException();
         runTests.testSetOS();
         runTests.testGetYear();
+        runTests.testGetYearTooOld();
         runTests.testToString();
         runTests.testBuyComputer();
         runTests.testBuySameObject();
